@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul {
+            list-style-type: none;
+        }
+
+        #outer {
+            width: 200px;
+            border: 1px solid #aaa;
+            margin: 10px auto;
+        }
+
+        #outer h2 {
+            cursor: pointer;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+            border: 1px solid;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            background: #111 180px 15px no-repeat;
+            border-color: #fff #e9edf2;
+        }
+
+        #outer ul {
+            border-top: 1px solid #DEE3E6;
+        }
+
+        #outer li {
+            height: 25px;
+            line-height: 25px;
+            vertical-align: top;
+        }
+
+        #outer a {
+            display: block;
+            color: #111;
+            background: #e9edf2;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+
+        #outer a:hover {
+            background: #111;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+    <script language="JavaScript">
+        window.onload = function () {
+            var oH2 = document.getElementsByTagName("h2")[0];
+            var oUl = document.getElementsByTagName("ul")[0];
+            oH2.onclick = function () {
+                var style = oUl.style;
+                style.display = style.display == "none" ? "block" : "none";
+                oH2.className = style.display == "none" ? "open" : ""
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <h2>播放列表...</h2>
+    <ul>
+        <li><a href="javascript:;">漂洋过海来看你</a></li>
+        <li><a href="javascript:;">你好</a></li>
+        <li><a href="javascript:;">走在冷风中</a></li>
+        <li><a href="javascript:;">day by day</a></li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script language="JavaScript">
+        var citystore = [];
+        citystore[0] = ['A', '1'];
+        citystore[1] = ['A', '2'];
+        citystore[2] = ['A', '3'];
+        citystore[3] = ['B', 'Red'];
+        citystore[4] = ['B', 'Green'];
+        citystore[5] = ['C', '一'];
+        citystore[6] = ['C', '二'];
+        citystore[7] = ['C', '三'];
+
+        window.onload = function () {
+            document.getElementById("state").onchange = filterCities;
+        };
+        function filterCities() {
+            var state = this.value;
+            var city = document.getElementById("cities");
+            city.options.length = 0;
+            for (var i = 0; i < citystore.length; i++) {
+                var st = citystore[i][0];
+                if (st == state) {
+                    var opt = new Option(citystore[i][1]);
+                    try {
+                        city.add(opt, null);
+                    } catch (e) {
+                        city.add(opt);
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<form id="picker" method="post" action="">
+    <label>
+        <select id="state">
+            <option value="">--</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+
+        <select id="cities">
+        </select>
+    </label>
+</form>
+</body>
+</html>

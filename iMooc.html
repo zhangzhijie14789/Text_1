@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>lunbo</title>
+    <style type="text/css">
+
+        *{margin: 0; padding: 0; text-decoration: none;}
+        #nav{
+            width:1362px; height:50px;
+            background-color:#000;
+        }
+        ul{
+            list-style:none;
+        }
+        ul li{
+            float:left;
+            text-align:center;
+            line-height:50px;
+        }
+        ul li a{
+            text-decoration:none;
+            padding:0 10px; width:90px;
+            display:block;
+            color:#fff;
+        }
+        ul li a:hover{ color:#fff; background-color:#900;}
+        .img1{
+            width:90px;
+            height:45px;
+            padding:0 50px 0 30px;
+            position:relative;
+            float:left;
+        }
+
+        #container {
+            width:1362px;
+            height:592px;
+            border: 1px solid #900;
+            overflow: hidden;
+            position:relative;
+            margin:0 auto;
+        }
+        #list{
+            width:6820px;
+            height: 592px;
+            position: absolute;
+            z-index: 1 ;
+        }
+        #list img{ float:left;}
+        #buttons{
+            position: absolute;
+            width: 100px;
+            height: 10px;
+            z-index: 2;
+            bottom: 30px;
+            left: 622px;
+        }
+        #buttons span{
+            cursor: pointer;
+            border: 1px solid #fff;
+            float:left;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #333;
+            margin-right: 5px;
+        }
+        #buttons .on{ background-color: red;}
+        .arrow{
+            cursor: pointer;
+            display: none;
+            line-height: 70px;
+            text-align: center;
+            font-size:60px;
+            width:70px;
+            height: 70px;
+            position: absolute;
+            z-index: 2;
+            top:250px;
+            color: #fff;
+            background-color:#CCCCCC;
+            opacity: 0.7;
+        }
+        .arrow:hover{ background-color:#333333;}
+        #container:hover .arrow{ display: block;}
+        #prev{left:20px;}
+        #next{right:20px;}
+        #second{
+            position: relative;;
+            width:1364px;
+            height:3000px;
+            background-color: #fff;
+            z-index:3;
+        }
+        #second2 {
+            position: relative;
+            top: 100px;
+            left: auto;
+            width: 1360px;
+            height: 300px;
+            background-color: #fff;
+            z-index: 4;
+            text-align: center;
+            padding-top:50px;
+        }
+        #second2 img{
+            opacity: 0.6;
+            margin: 70px;
+        }
+        #second2 img:hover{
+            opacity:1;
+            transform: scale(1.4,1.4);
+        }
+        #Upimg{
+            width: 1360px;
+            height: 371px;
+            overflow: hidden;
+            position: relative;
+           margin-top:180px;
+            background-color:#eee;
+        }
+        #list1{
+            width:600px;
+            height:1113px;
+            position: absolute;
+            margin-left: 100px;
+        }
+        #Font{
+            position: relative;
+            left: 680px;
+            height: 1113px;
+            color: #333;
+            font-size: 24px;
+        }
+        #Font1{
+            position: relative;
+            left: 100px;
+            height: 1113px;
+            color: #666;
+            font-size: 24px;
+        }
+        #Upimg1{
+            width: 1360px;
+            height: 371px;
+            overflow: hidden;
+
+            position: relative;
+            margin-top:0px;
+            background-color:#fff;
+
+        }
+        #list2{
+            width:600px;
+            height:1113px;
+            position: absolute;
+            margin-left: 700px;
+        }
+        #Photo{
+            position: relative;
+            top: 150px;
+            text-align: center;
+        }
+        #Photo img{
+            margin: 3px;
+            opacity: 0.7;
+        }
+        #Photo img:hover{
+            opacity: 1;
+        }
+        #Title{
+            position: relative;
+            top: 200px;
+            text-align: center;
+        }
+        #PhotoOne{
+            position: relative;
+            top: 240px;
+            text-align: center;
+        }
+        #PhotoOne img{
+            margin: 4px;
+            opacity: 0.7;
+        }
+        #PhotoOne img:hover{
+            opacity: 1;
+        }
+
+        #Foot{
+            position:relative;
+            top: 1220px;
+            text-align: center;
+        }
+        #Button{
+            position: relative;
+            top:300px;
+            width: 200px;
+            height: 70px;
+            background-color: #990000;
+            margin: auto;
+        }
+        #Button:hover{
+            background-color: #000;
+        }
+        #Button a{
+          text-align: center;
+            line-height: 70px;
+            text-decoration: none;
+            color:#000;
+        }
+        #Button a:hover{
+            color:#fff;
+        }
+        #Button a h1:hover{
+            transform: scale(1.2,1.2);
+        }
+        #container2{
+            position: relative;
+            top:700px;
+            left: 140px;
+            width: 1200px;
+            margin: 0;
+        }
+        #list4{
+            width: 200px;
+            height:200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #Block1{
+            width: 200px;
+            height: 200px;
+            background-color: #900;
+            position:absolute;
+            top: 0;
+            left: 200px;
+            text-align: center;
+        }
+        #container2 h2{
+            margin: 60px 10px;
+            color: #fff;
+        }
+        #container2 h4{
+            margin:20px 5px;
+            color: #fff;
+        }
+
+        #list5{
+            width: 100px;
+            height:100px;
+            position: absolute;
+            top:0;
+
+        }
+        #Block2{
+            width: 100px;
+            height: 100px;
+            background-color: #900;
+            position:absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+        #list6{
+            width: 100px;
+            height:100px;
+            position: absolute;
+            top:100px;
+        }
+        #Block3{
+            width: 100px;
+            height: 100px;
+            background-color: #900;
+            position:absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+        #list9{
+            width: 100px;
+            height:100px;
+            position: absolute;
+            top:100px;
+        }
+        #Block9{
+            width: 100px;
+            height: 100px;
+            background-color: #900;
+            position:absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+        #Block4{
+            width: 100px;
+            height: 100px;
+            background-color: #900;
+            position:absolute;
+            top: 0;
+            left: 100px;
+            text-align: center;
+        }
+
+        #list7{
+            width: 200px;
+            height:200px;
+            position: absolute;
+            top: 0;
+        }
+        #Block7{
+            width: 200px;
+            height: 200px;
+            background-color: #900;
+            position:absolute;
+            top: 0;
+            left:0;
+            text-align: center;
+        }
+        #list8{
+            width: 200px;
+            height:200px;
+            position: absolute;
+            top: 0;
+        }
+        #Block8{
+            width: 200px;
+            height: 200px;
+            background-color: #900;
+            position:absolute;
+            top: 0;
+            left:0;
+            text-align: center;
+        }
+        #Photo_1{
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width:200px;
+            height: 200px;
+            opacity:0.3;
+        }
+        #Photo_1:hover{
+            opacity: 1;
+        }
+        #Photo_2{
+            position: absolute;
+            top: 0;
+            left:200px;
+            width: 100px;
+            height: 100px;
+            opacity:0.7;
+        }
+        #Photo_2:hover{
+            opacity:1;
+        }
+        #Photo_3{
+            position:absolute;
+            top: 100px;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+            opacity:0.7;
+        }
+        #Photo_3:hover{
+            opacity: 1;
+        }
+        #Photo_4{
+            position: absolute;
+            top: 0;
+            left: 600px;
+            width: 100px;
+            height: 100px;
+            opacity:0.7;
+        }
+        #Photo_4:hover{
+            opacity: 1;
+        }
+        #Photo_5{
+            position: absolute;
+            top: 100px;
+            left: 600px;
+            width: 100px;
+            height: 100px;
+        }
+        #Photo_5:hover{
+            opacity: 1;
+        }
+        #Photo_6{
+            position: absolute;
+            top: 0;
+            left: 700px;
+            width: 100px;
+            height: 100px;
+            opacity:0.7;
+        }
+        #Photo_6:hover{
+            opacity: 1;
+        }
+        #Photo_7{
+            position: absolute;
+            top: 0;
+            left: 400px;
+            width:200px;
+            height: 200px;
+            z-index: 1;
+            opacity:0.7;
+        }
+        #Photo_7:hover{
+            opacity: 1;
+        }
+        #Photo_8{
+            position: absolute;
+            top: 0;
+            left: 300px;
+            width: 100px;
+            height: 100px;
+            opacity:0.7;
+
+        }
+        #Photo_8:hover{
+            opacity: 1;
+        }
+        #Photo_9{
+            position:absolute;
+            top: 100px;
+            left: 300px;
+            width: 100px;
+            height: 100px;
+            opacity:0.7;
+        } #Photo_9:hover{
+              opacity: 1;
+          }
+        #Photo_10{
+            position:absolute;
+            top: 0px;
+            left: 800px;
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+            opacity:0.7;
+        }
+        #Photo_10:hover{
+            opacity: 1;
+        }
+    </style>
+    <script language="javascript">
+        window.onload=function(){
+            var container=document	.getElementById('container');
+            var list=document.getElementById('list');
+            var buttons=document.getElementById('buttons').getElementsByTagName('span');
+            var prev=document.getElementById('prev');
+            var next=document.getElementById('next');
+            var index=1;
+
+            function showbutton(){
+                for(var i=0;i<buttons.length;i++){
+                    if(buttons[i].className=='on'){
+                        buttons[i].className=' ';
+                        break;
+                    }
+                }
+                buttons[index-1].className='on';
+            }
+            function  animate(offset) {
+                animate:true;
+                var newleft=parseInt(list.style.left)+offset;
+                var time=1000;
+                var interval=10;
+                var speed=offset/(time/interval);
+                function go() {
+                    animate:false;
+                    if((speed<0&&parseInt(list.style.left)>newleft)||speed>0&&parseInt(list.style.left)<newleft){
+                        list.style.left=parseInt(list.style.left)+speed+'px';
+                        setTimeout(go,interval);
+                    }
+                    else{
+                        list.style.left=newleft+'px';
+                        if(newleft>-1364){
+                            list.style.left=-4092+'px';
+                        }
+                        if(newleft<-4092){
+                            list.style.left=-1364+'px';
+                    }
+                  }
+                }
+                go();
+            }
+            function play(){
+                timer=setInterval(function () {
+                    next.onclick();
+                },2000);
+            }
+            function stop(){
+                clearInterval(timer);
+            }
+            next.onclick=function(){
+                if(index==3){
+                    index=1;
+                }
+                else{
+                    index+=1;
+                }
+                showbutton();
+              animate(-1364);
+            };
+            prev.onclick=function() {
+                if (index == 1) {
+                    index = 3;
+                }
+                else {
+                    index -= 1;
+                }
+                showbutton();
+                animate(1364);
+            }
+                for(var i=0; i<buttons.length; i++) {
+                    buttons[i].onclick = function () {
+                        if(this.className=='on'){
+                            return;
+                        }
+                        var myIndex = parseInt(this.getAttribute('index'));
+                        var offset = -1364 * (myIndex - index);
+                        animate(offset);
+                        index = myIndex;
+                        showbutton();
+                    }
+                }
+             container.onmouseout= play;
+             container.onmouseover=stop;
+            play();
+            var Upimg = document.getElementById('Upimg');
+            var list1 = document.getElementById('list1');
+            function play1() {
+                function go() {
+                    if (parseInt(list1.style.top) > 0) {
+                        list1.style.top = parseInt(list1.style.top) - 92.75 + 'px';
+                        setTimeout(go, 120);
+                    }
+                    else {
+                        list1.style.top = 0 + 'px';
+                    }
+                }
+                go();
+                function Go() {
+                    if (parseInt(Font.style.top) > 292) {
+                        Font.style.top = parseInt(Font.style.top) - 231 + 'px';
+                    }
+                    else {
+                        Font.style.top = 140 + 'px';
+                    }
+                }
+                Go();
+            }
+            Upimg.onmouseover=play1;
+            var Upimg1 = document.getElementById('Upimg1');
+            var list2 = document.getElementById('list2');
+            function play2() {
+                function go() {
+                    if (parseInt(list2.style.top) > 0) {
+                        list2.style.top = parseInt(list2.style.top) - 90 + 'px';
+                        setTimeout(go, 100);
+                    }
+                    else {
+                        list2.style.top = 0 + 'px';
+                    }
+                }
+                go();
+                function Go1() {
+                    if (parseInt(Font1.style.top) > 292) {
+                        Font1.style.top = parseInt(Font1.style.top) - 231 + 'px';
+                    }
+                    else {
+                        Font1.style.top = 140 + 'px';
+                    }
+                }
+                Go1();
+            }
+            Upimg1.onmouseover=play2;
+            function play8() {
+                list4.style.left=parseInt(list4.style.left)+600+'px';
+            }
+            function stop8() {
+                list4.style.left=parseInt(list4.style.left)-600+'px';
+            }
+            Photo_1.onmouseover = play8;
+            Photo_1.onmouseout=stop8;
+
+            function play9() {
+                list5.style.left = parseInt(list5.style.left) + 700 + 'px';
+            }
+
+            function stop9() {
+                list5.style.left = parseInt(list5.style.left) - 700 + 'px';
+            }
+
+            Photo_2.onmouseover = play9;
+            Photo_2.onmouseout = stop9;
+
+            function play3() {
+                list6.style.left = parseInt(list6.style.left) + 700 + 'px';
+            }
+
+            function stop3() {
+                list6.style.left = parseInt(list6.style.left) - 700 + 'px';
+            }
+            Photo_3.onmouseover = play3;
+            Photo_3.onmouseout = stop3;
+            function play11() {
+                list6.style.left = parseInt(list6.style.left) + 600 + 'px';
+            }
+            function stop11() {
+                list6.style.left = parseInt(list6.style.left) - 600 + 'px';
+            }
+            Photo_9.onmouseover = play11;
+            Photo_9.onmouseout = stop11;
+            function play4() {
+                Block4.style.left = parseInt(Block4.style.left) + 600 + 'px';
+            }
+            function stop4() {
+                Block4.style.left = parseInt(Block4.style.left) - 600 + 'px';
+            }
+            Photo_8.onmouseover = play4;
+            Photo_8.onmouseout = stop4;
+            function play5() {
+                list7.style.left=parseInt(list7.style.left)+1000+'px';
+            }
+            function stop5() {
+                list7.style.left=parseInt(list7.style.left)-1000+'px';
+            }
+            Photo_7.onmouseover = play5;
+            Photo_7.onmouseout=stop5;
+
+            function play6() {
+                list8.style.left=parseInt(list8.style.left)+1400+'px';
+            }
+            function stop6() {
+                list8.style.left=parseInt(list8.style.left)-1400+'px';
+            }
+            Photo_10.onmouseover = play6;
+            Photo_10.onmouseout=stop6;
+        }
+    </script>
+</head>
+<body>
+<div id="nav">
+    <ul>  /*导航栏菜单*/
+        <li><img class="img1" src="2016.04.16/img/慕课网.png" alt=""></li>
+        <li><a href="#">课程</a></li>
+        <li><a href="#">计划</a></li>
+        <li><a href="#">实战</a></li>
+        <li><a href="#">猿问</a></li>
+        <li><a href="#">文章</a></li>
+
+    </ul>
+</div>
+<div id="container">
+    <div id="list" style="left:0;">
+        <img src="2016.04.16/img/3.jpg" alt="">
+        <img src="2016.04.16/img/1.jpg" alt="">
+        <img src="2016.04.16/img/2.jpg" alt="">
+        <img src="2016.04.16/img/3.jpg" alt="">
+        <img src="2016.04.16/img/1.jpg" alt="">
+    </div>
+    <div id="buttons">
+        <span index="1" class="on" ></span>
+        <span index="2"></span>
+        <span index="3"></span>
+    </div>
+    <a href="javascript:;" class="arrow" id="prev">&lt;</a>
+    <a href="javascript:;" class="arrow" id="next">&gt;</a>
+</div>
+<div id="second">
+    <div id="second2">
+        <img src="2016.04.16/img/1.png"><img src="2016.04.16/img/3.png"><img src="2016.04.16/img/2.png">
+    </div>
+    <div id="Upimg">
+        <div id="list1" style="top:371px">
+            <img src="2016.04.16/img/4.png">
+        </div>
+        <div id="Font" style="top: 371px">
+            <h2>精心制作的视频课程</h2><br>
+            <h5>老师都是技术大牛实战派，课程内容接地气，实际工作用的着</h5>
+        </div>
+    </div>
+    <div id="Upimg1">
+        <div id="list2" style="top:371px">
+            <img src="2016.04.16/img/6.png">
+        </div>
+        <div id="Font1" style="top: 371px">
+            <h2>精心制作的视频课程</h2><br>
+            <h5>老师都是技术大牛实战派，课程内容接地气，实际工作用的着</h5>
+        </div>
+    </div>
+    <div id="Photo">
+        <img src="2016.04.16/img/12.jpg"><img src="2016.04.16/img/13.jpg"><img src="2016.04.16/img/14.jpg">
+    </div>
+    <div id="Title">
+        <h1>课&nbsp;程</h1>
+    </div>
+    <div id="PhotoOne">
+        <img src="2016.04.16/img/15.jpg"><img src="2016.04.16/img/16.jpg"><img src="2016.04.16/img/17.jpg"><img src="2016.04.16/img/18.jpg">
+    </div>
+    <div id="Button">
+        <a href="www.imooc.com"><h1>开始学习</h1></a>
+    </div>
+    <div id="Foot">
+        <p>版权所有@小笨</p>
+    </div>
+<div id="container2">
+    <div id="Photo_1">
+        <img src="2016.04.16/img/28.jpg"></div>
+    <div id="Photo_2">
+        <img src="2016.04.16/img/26.jpg"></div>
+    <div id="Photo_3">
+        <img src="2016.04.16/img/27.jpg"></div>
+    <div id="Photo_7">
+        <img src="2016.04.16/img/33.jpg"></div>
+    <div id="Photo_8">
+        <img src="2016.04.16/img/25.jpg"></div>
+    <div id="Photo_9">
+        <img src="2016.04.16/img/30.jpg"></div>
+    <div id="Photo_10">
+        <img src="2016.04.16/img/34.jpg"></div>
+    <div id="Photo_4">
+        <img src="2016.04.16/img/31.jpg"></div>
+    <div id="Photo_5">
+        <img src="2016.04.16/img/27.jpg"></div>
+    <div id="Photo_6">
+        <img src="2016.04.16/img/26.jpg"></div>
+    <div id="list4" style="left: -600px">
+        <div id="Block1"><h2>资深大牛不知道他叫什么</h2>
+        </div>
+    </div>
+    <div id="list5" style="left: -400px">
+        <div id="Block2"><h4>菜鸟一个,就是我啦</h4>
+        </div>
+    </div>
+        <div id="list6" style="left: -400px">
+            <div id="Block3"><h4>哇。。。</h4>
+            </div>
+        </div>
+    <div id="list9" style="left: -400px">
+        <div id="Block9"><h4>1</h4>
+        </div>
+    </div>
+    <div id="Block4" style="left: -400px"><h4>小胡子不错呦</h4>
+    </div>
+    <div id="list7" style="left: -400px">
+        <div id="Block7"><h2>虽然不知道是谁，但是感觉很厉害</h2>
+        </div>
+    </div>
+    <div id="list8" style="left: -400px">
+        <div id="Block8"><h2>一看就是个程序员，平头，眼镜。。。</h2>
+        </div>
+    </div>
+</div>
+    </div>
+</body>
+</html>

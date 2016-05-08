@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        p {
+            font-size: 60px;
+            color: #990000;
+        }
+    </style>
+    <script language="JavaScript">
+        window.onload = function () {
+            var oNum = document.getElementsByTagName("p")[0];
+            var i = 0;
+            setInterval(updateNum, 1000);
+            updateNum();
+            function updateNum() {
+                oNum.innerHTML = ++i;
+            }
+        }
+    </script>
+</head>
+<body>
+<div><p align="center"></p></div>
+</body>
+</html>

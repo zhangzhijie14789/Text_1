@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        body, dl, dt, dd, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 12px;
+        }
+
+        label, input, a {
+            vertical-align: middle;
+        }
+
+        label {
+            padding: 0 10px 0 5px;
+        }
+
+        a {
+            color: #09f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        dl {
+            width: 320px;
+            margin: 10px auto;
+            padding: 10px 5px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            background: #fafafa;
+        }
+
+        dt {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #666;
+            text-align: center;
+        }
+
+        dt label {
+            font-weight: 700;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+
+        table {
+            margin: 10px auto;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        ul {
+            list-style: none;
+            line-height: 22px;
+        }
+    </style>
+    <script id="precode">
+        window.onload = function () {
+            var select = document.getElementById("select");
+            var getValueSelect = document.getElementById("getValueSelect");
+            var setValueSelect = document.getElementById("setValueSelect");
+            getValueSelect.onclick = function () {
+                var selectIndex = select.selectedIndex;
+                var selectText = select.options[selectIndex].text;
+                var selectValue = select.options[selectIndex].value;
+                if (selectIndex == 0) {
+                    alert("你还没有选择");
+                } else {
+                    alert('选中第' + selectIndex + '项，  值是"' + selectValue + '"，  文本是"' + selectText + '"');
+                }
+            };
+            resetValueSelect.onclick = function () {
+                select.value = "";
+            };
+            var mselect = document.getElementById("mselect");
+            var getValuemSelect = document.getElementById("getValuemSelect");
+            var resetValuemSelect = document.getElementById("resetValuemSelect");
+
+            getValuemSelect.onclick = function () {
+                var mValue = "";
+                for (var i = 0; i < mselect.options.length; i++) {
+                    if (mselect.options[i].selected) {
+                        mValue += mselect.options[i].value + "，";
+                    }
+                }
+                alert(mValue);
+            };
+
+            resetValuemSelect.onclick = function () {
+                for (var i = 0; i < mselect.options.length; i++) {
+                    mselect.options[i].selected = false;
+                }
+            };
+            document.getElementById("checkAll").onclick = function () {
+                for (var i = 0; i < mselect.options.length; i++) {
+                    if (mselect.options[i].value != "") {
+                        mselect.options[i].selected = true;
+                    }
+                }
+            };
+            document.getElementById("checkOpp").onclick = function () {
+                for (var i = 0; i < mselect.options.length; i++) {
+                    if (mselect.options[i].value != "") {
+                        //var bool = mselect.options[i].selected;
+                        mselect.options[i].selected == true ? mselect.options[i].selected = false : mselect.options[i].selected = true;
+                    }
+                }
+            }
+        };
+        function checkselect(objname) {
+            o = document.getElementById(objname);
+            t = document.getElementById("output");
+            var intvalue = "";
+            for (i = 0; i < o.options.length; i++) {
+                if (o.options[i].selected) {
+                    intvalue += o.options[i].value + ",";
+                }
+            }
+            t.value = intvalue.substr(0, intvalue.length - 1);
+        }
+    </script>
+</head>
+<body>
+<dl>
+    <dt>操作表单 select</dt>
+    <dd>
+        <table>
+            <tr>
+                <td><label>
+                    <select id="select">
+                        <option value="">选择城市</option>
+                        <option value="北京市">北京</option>
+                        <option value="上海市">上海</option>
+                        <option value="天津市">天津</option>
+                    </select>
+                </label>
+                </td>
+                <td>
+                    <button id="getValueSelect">获取</button>
+                    <br>
+                    <button id="resetValueSelect">重置</button>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <select multiple="multiple" size="3" id="mselect">
+                            <option value="">爱好</option>
+                            <option value="读书">读书</option>
+                            <option value="运动">运动</option>
+                            <option value="唱歌">唱歌</option>
+                        </select>
+                    </label>
+                </td>
+                <td>
+                    <button id="getValuemSelect">获取</button>
+                    <br>
+                    <button id="resetValuemSelect">重置</button>
+                    <br>
+                    <button id="checkAll">全选</button>
+                    <br>
+                    <button id="checkOpp">反选</button>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+
+            </tr>
+        </table>
+    </dd>
+</dl>
+</body>
+</html>

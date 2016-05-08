@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        window.onload = function () {
+            var oWin = document.getElementById("win");
+            var oLay = document.getElementById("overlay");
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oClose = document.getElementById("close");
+            oBtn.onclick = function () {
+                oLay.style.display = "block";
+                oWin.style.display = "block";
+            };
+            oClose.onclick = function () {
+                oLay.style.display = "none";
+                oWin.style.display = "none";
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="overlay"></div>
+<div id="win"><h2><span id="close">×</span></h2></div>
+<p class="tc">
+    <button>弹出层</button>
+</body>
+</html>

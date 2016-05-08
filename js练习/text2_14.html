@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 12px;
+        }
+
+        label, input, a {
+            vertical-align: middle;
+        }
+
+        label {
+            padding: 0 10px;
+        }
+
+        a {
+            color: #09f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        dl {
+            width: 120px;
+            margin: 10px auto;
+            padding: 10px 5px;
+            background: #fafafa;
+        }
+
+        dt {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #666;
+        }
+
+        dt label {
+            font-weight: 700;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    </style>
+    <script id="precode">
+        window.onload = function () {
+            var oA = document.getElementsByTagName("a")[0];
+            var oInput = document.getElementsByTagName("input");
+            var oLabel = document.getElementsByTagName("label")[0];
+            var isCheckAll = function () {
+                for (var i = 1, n = 0; i < oInput.length; i++) {
+                    oInput[i].checked && n++;
+                }
+                oInput[0].checked = n == oInput.length - 1;
+                oLabel.innerHTML = oInput[0].checked ? "全不选" : "全选";
+            };
+            oInput[0].onclick = function () {
+                for (var i = 1; i < oInput.length; i++) {
+                    oInput[i].checked = this.checked;
+                }
+                isCheckAll()
+            };
+            oA.onclick = function () {
+                for (var i = 1; i < oInput.length; i++) {
+                    oInput[i].checked = !oInput[i].checked;
+                }
+                isCheckAll()
+            };
+            for (var i = 1; i < oInput.length; i++) {
+                oInput[i].onclick = function () {
+                    isCheckAll();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<dl>
+    <dt><label><input type="checkbox" id="checkAll"/><label>全选</label><a href="javascript:;">反选</a></label></dt>
+    <dd>
+        <p><label><input type="checkbox" name="item"/>选项1</label></p>
+        <p><label><input type="checkbox" name="item"/>选项2</label></p>
+        <p><label><input type="checkbox" name="item"/>选项3</label></p>
+
+    </dd>
+</dl>
+</body>
+</html>

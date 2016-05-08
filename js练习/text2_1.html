@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <script language="JavaScript">
+        window.onload = function () {
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oIme = document.getElementById("ime");
+            var oClose = document.getElementById("close");
+            var style = oIme.style;
+            oBtn.onclick = function () {
+                style.display = style.display == "block" ? "none" : "block";
+            };
+            oClose.onclick = function () {
+                style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <button>输入法</button>
+    <ul id="ime">
+        <li><a href="javascript:;">手写</a></li>
+        <li><a href="javascript:;">拼音</a></li>
+        <li id="close"><a href="javascript:;">关闭</a></li>
+    </ul>
+</div>
+</body>
+</html>

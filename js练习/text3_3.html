@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            text-align: center
+        }
+    </style>
+    <script language="JavaScript">
+        window.onload = function () {
+            var aBtn = document.getElementsByTagName("input")[0];
+            var i = 0;
+
+            aBtn.onclick = function () {
+                aBtn.value = ++i;
+                //alert(i)
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" name="input" value="0">
+</body>
+</html>

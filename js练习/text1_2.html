@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            float: left;
+            margin: 20px;
+            background-color: #990000;
+            color: #fff;
+        }
+
+        #skin {
+            width: 500px;
+            height: 500px;
+            background-color: green;
+        }
+    </style>
+    <script language="JavaScript">
+        window.onload = function () {
+            var oLink = document.getElementsByTagName("input")[0];
+            var oSkin = document.getElementById("skin").getElementsByTagName("li");
+            for (var i = 0; i < oSkin.length; i++) {
+                oSkin[i].onclick = function () {
+                    for (var p in oSkin) {
+                        oLink['href'] = this.id + ".css";
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="hongse"><input type="button" value="lvse">
+<div id="skin">
+    <ul>
+        <li>新闻</li>
+        <li>误乐</li>
+        <li>游戏</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="javascript">
+        window.onload = function () {
+            var aInput = document.getElementsByTagName("input");
+            var aSpan = document.getElementsByTagName("span")[0];
+
+            for (var i = 0; i < aInput.length - 1; i++) {
+                aInput[i].onkeyup = function () {
+                    this.value = this.value.replace(/[^\d]/, "");
+                }
+            }
+
+            aInput[2].onclick = function () {
+                (aInput[0].value == "" || aInput[1].value == "") ?
+                        alert("输入数字！") :
+                        aSpan.innerHTML = parseInt(aInput[0].value) + parseInt(aInput[1].value);
+            }
+        };
+    </script>
+</head>
+<body>
+<label><input type="text"><input type="text">
+    <input type="button" value="求和"></label>
+<span></span>
+</body>
+</html>

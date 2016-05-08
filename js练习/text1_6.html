@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        var myFn = function (a, b) {
+            alert(a.value);
+            alert(b.value);
+        };
+        window.onload = function () {
+            var oInput = document.getElementsByTagName("input");
+            var oBtn = document.getElementsByTagName("button")[0];
+            oBtn.onclick = function () {
+                myFn(oInput[0], oInput[1]);
+            }
+        };
+    </script>
+</head>
+<body><label>
+    <input type="text">
+    <input type="text">
+    <button>chancan</button>
+</label>
+</body>
+</html>

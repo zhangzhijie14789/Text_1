@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        window.onload = function () {
+            var aInput = document.getElementsByTagName("input");
+            aInput[0].onkeyup = function () {
+                this.value = this.value.replace(/[^\d]/, "");
+            };
+            aInput[1].onclick = function () {
+                (aInput[0].value == "") ?
+                        alert("请输入数字！") :
+                        alert(/^\d{2}$/.test(parseInt(aInput[0].value)) ? "√ 是两位数" : "这是" + aInput[0].value.length + "位数");
+            }
+        };
+    </script>
+</head>
+<body>
+<label><input type="text"><input type="button" value="是否未两位数"></label>
+<span></span>
+</body>
+</html>

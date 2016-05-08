@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        ul {
+            list-style-type: none;
+        }
+
+        #outer {
+            width: 560px;
+            border: 1px solid #333;
+            margin: 10px auto;
+            padding: 0 0 10px 10px;
+        }
+
+        #outer h2 {
+            line-height: 30px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #outer ul:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        #outer ul {
+            zoom: 1;
+        }
+
+        #outer ul li {
+            position: relative;
+            float: left;
+            border: 1px solid #333;
+            margin: 10px 10px 0 0;
+            display: inline;
+        }
+
+        #outer ul li img {
+            position: absolute;
+            top: -14px;
+            left: -14px;
+            display: none;
+            border: 2px solid #999;
+            cursor: crosshair;
+        }
+
+        #outer ul li a {
+            color: #666;
+            width: 80px;
+            height: 80px;
+            display: block;
+            background: #f0f0f0;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        #outer ul li a strong {
+            display: block;
+        }
+    </style>
+    <script language="JavaScript">
+        window.onload = function () {
+            var oLi = document.getElementsByTagName("li");
+            var oA = document.getElementsByTagName("a");
+            var oImg = document.getElementsByTagName("img");
+            for (var i = 0; i < oLi.length; i++) {
+                oA[i].index = oImg[i].index = i;
+                oA[i].onmouseover = function () {
+                    oLi[this.index].className = "zindex";
+                    oImg[this.index].style.display = "block";
+                };
+                oA[i].onmouseout = function () {
+                    oLi[this.index].className = "";
+                    oImg[this.index].style.display = "none";
+                };
+                oImg[i].onmouseover = function () {
+                    oLi[this.index].className = "zindex";
+                    this.style.display = "block";
+                };
+                oImg[i].onmouseout = function () {
+                    oLi[this.index].className = "";
+                    this.style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="outer">
+    <h2>鼠标移过显示图片</h2>
+    <ul>
+        <li>
+            <a href="javascript:;" title="1"></a>
+            <img src="img/1.jpg">
+        </li>
+        <li>
+            <a href="javascript:;" title="2"></a>
+            <img src="img/2.jpg">
+        </li>
+        <li>
+            <a href="javascript:;" title="3"></a>
+            <img src="img/3.jpg">
+        </li>
+        <li>
+            <a href="javascript:;" title="5"></a>
+            <img src="img/4.jpg">
+        </li>
+        <li>
+            <a href="javascript:;" title="4"></a>
+            <img src="img/5.jpg">
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

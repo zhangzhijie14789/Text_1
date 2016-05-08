@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        window.onload = function () {
+            var aInput = document.getElementsByTagName("input");
+            var aSpan = document.getElementsByTagName("span")[0];
+            for (var i = 0; i < aInput.length - 1; i++) {
+                aInput[i].onkeyup = function () {
+                    this.value = this.value.replace(/[^\d]/, "");
+                }
+            }
+
+            aInput[2].onclick = function () {
+                (aInput[0].value == "" || aInput[1].value == "") ?
+                        alert("输入数字！") :
+                        (aSpan.innerHTML = Math.max(aInput[0].value, aInput[1].value));
+            }
+        };
+    </script>
+</head>
+<body>
+<label><input type="text"><input type="text">
+    <input type="button" value="比较"></label>
+<span></span>
+</body>
+</html>
